@@ -25,6 +25,7 @@ public class AdminportalApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        /* creating admin
         User user1 = new User();
         user1.setFirstName("admin");
         user1.setLastName("admin");
@@ -38,5 +39,6 @@ public class AdminportalApplication implements CommandLineRunner {
         userRoles.add(new UserRole(user1, role1));
 
         userService.createUser(user1, userRoles);
+         */
     }
 }

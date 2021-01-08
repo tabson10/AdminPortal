@@ -1,7 +1,7 @@
 package com.example.adminportal.domain;
 
 import lombok.Data;
-import org.springframework.web.multipart.MultipartFile;
+
 
 import javax.persistence.*;
 
@@ -22,8 +22,5 @@ public class Fruit {
 
     @Column(name = "opis", columnDefinition = "text")
     private String description;
-
-    @Transient
-    private MultipartFile fruitImage;
 
 }
