@@ -37,7 +37,10 @@
                     <div class="form-group">
                         <label for="price" class="col-xs-2 control-label">* Cena:</label>
                         <div class="col-xs-8">
-                            <input type="text" name="price" class="form-control" id="price" placeholder="Cena" th:value="${batch.price}" required="required" />
+                            <div class="input-group">
+                                <span class="input-group-addon">zł</span>
+                                <input type="text" name="price" class="form-control" id="price" placeholder="Cena" th:value="${batch.price}" required="required" />
+                            </div>
                             <span class="help-block">Cena za 1 kg</span>
                         </div>
                     </div>

@@ -6,6 +6,8 @@ import com.example.adminportal.service.BatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class BatchServiceImpl implements BatchService {
@@ -15,6 +17,11 @@ public class BatchServiceImpl implements BatchService {
 
     public Batch save(Batch batch) {
         return batchRepository.save(batch);
+    }
+
+    @Override
+    public List<Batch> findAll() {
+        return (List<Batch>) batchRepository.findAll();
     }
 
 }

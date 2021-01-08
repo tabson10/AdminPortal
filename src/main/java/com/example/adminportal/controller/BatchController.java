@@ -15,6 +15,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 @Controller
 @RequestMapping("/fruit")
@@ -50,8 +51,8 @@ public class BatchController {
 
     @RequestMapping("/batchList")
     public String batchList(Model model) {
-        //List<Batch> batchList = batchService.findAll();
-
+        List<Batch> batchList = batchService.findAll();
+        model.addAttribute("batchList", batchList);
         return "batchList";
     }
 }

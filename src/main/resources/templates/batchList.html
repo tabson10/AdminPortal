@@ -5,7 +5,31 @@
 <body>
     <div th:replace="common/header :: navbar" />
         <div class="container">
-            <h1>Strona z wszystkimi partiami owoców</h1>
+            <div class="table-responsive">
+                <table id="batchListTable" class="table table-bordered table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th>Gatunek</th>
+                        <th>Cena</th>
+                        <th>Ilość</th>
+                        <th>Producent</th>
+                        <th>Magazyn</th>
+                        <th>Operacja</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-th-each="batch: ${batchList}">
+                            <!--<td><input hidden="hidden" name="batchId" th:value="${batch.batchId}" /></td> -->
+                            <td th:text="${batch.type}"></td>
+                            <td th:text="${batch.price}"></td>
+                            <td th:text="${batch.quantity}"></td>
+                            <td th:text="${batch.producer}"></td>
+                            <td th:text="${batch.warehouse}"></td>
+                            <td>Usuń</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     <div th:replace="common/header :: body-bottom-scripts" />
 </body>
