@@ -18,9 +18,9 @@
                     </tr>
                     </thead>
                     <tbody>
-                        <tr data-th-each="batch: ${batchList}">
+                        <tr class="batch-item" data-th-each="batch: ${batchList}">
                             <!--<td><input hidden="hidden" name="batchId" th:value="${batch.batchId}" /></td> -->
-                            <td th:text="${batch.type}"></td>
+                            <td><a th:href="@{/fruit/batchInfo(id=${batch.batchId})}"><span th:text="${batch.type}"></span></a></td>
                             <td th:text="${batch.price}"></td>
                             <td th:text="${batch.quantity}"></td>
                             <td th:text="${batch.producer}"></td>
@@ -32,5 +32,11 @@
             </div>
         </div>
     <div th:replace="common/header :: body-bottom-scripts" />
+
+    <script>
+        $(document).ready( function () {
+            $('#batchListTable').DataTable();
+        } );
+    </script>
 </body>
 </html>

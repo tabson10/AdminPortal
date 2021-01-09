@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+    <div th:replace="common/header :: navbar" />
+
+    <div class="container">
+        <div>
+            <ol class="breadcrumb">
+                <li><a th:href="@{/fruit/batchList}"><i class="fa fa-long-arrow-alt-left" aria-hidden="true"></i>Powrót</a></li>
+                <li><a th:href="@{/fruit/updateBatch?id=}+${batch.batchId}">Edytuj</a></li>
+            </ol>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img th:src="@{/img/batch/}+${batch.batchId}+'.png'" class="img-responsive center-block" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-9">
+                <h3 th:text="${batch.type}"></h3>
+                <div class="row">
+                    <p><strong>Gatunek: </strong><span th:text="${batch.type}"></span></p>
+                    <p><strong>Data ważności: </strong><span th:text="${batch.date}"></span></p>
+                    <p><strong>Cena: </strong><span th:text="${batch.price}"></span> zł/kg</p>
+                    <p><strong>Ilość: </strong><span th:text="${batch.quantity}"></span> kg</p>
+                    <p><strong>ID Owocu: </strong><span th:text="${batch.fruit}"></span></p>
+                    <p><strong>ID Magazynu: </strong><span th:text="${batch.warehouse}"></span></p>
+                    <p><strong>ID Dostawcy: </strong><span th:text="${batch.producer}"></span></p>
+                    <p><strong>Opis: </strong><span th:text="${batch.description}"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>
