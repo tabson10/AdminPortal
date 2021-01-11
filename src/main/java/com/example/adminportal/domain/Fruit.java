@@ -2,7 +2,6 @@ package com.example.adminportal.domain;
 
 import lombok.Data;
 
-
 import javax.persistence.*;
 
 @Data
