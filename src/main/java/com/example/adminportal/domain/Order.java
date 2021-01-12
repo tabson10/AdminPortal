@@ -34,11 +34,14 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<CartItem> cartItemList;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ShippingAddress shippingAddress;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Payment payment;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Billing billing;
 
     @ManyToOne
     private User user;

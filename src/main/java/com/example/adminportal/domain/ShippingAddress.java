@@ -34,7 +34,6 @@ public class ShippingAddress {
     @Column(name = "nr_mieszkania")
     private String shippingAddressApartmentNumber;
 
-    @ManyToOne
-    @JoinColumn(name = "ID_UZYTKOWNIKA")
-    private User user;
+    @OneToOne
+    private Order order;
 }
