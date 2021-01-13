@@ -30,4 +30,9 @@ public class BatchServiceImpl implements BatchService {
         return batchRepository.findById(batchId);
     }
 
+    @Override
+    public void removeOne(int id) {
+        batchRepository.deleteById(id);
+    }
+
 }

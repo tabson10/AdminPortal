@@ -25,7 +25,10 @@
                             <td th:text="${batch.quantity}"></td>
                             <td th:text="${batch.producer}"></td>
                             <td th:text="${batch.warehouse}"></td>
-                            <td>Usuń</td>
+                            <td>
+                                <input hidden="hidden" name="batchId" th:value="${batch.batchId}" />
+                                <a th:href="@{/fruit/remove(id=${batch.batchId})}" class="btn btn-danger btn-xs delete-batch">Usuń</a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

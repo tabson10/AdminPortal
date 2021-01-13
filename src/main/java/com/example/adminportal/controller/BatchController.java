@@ -50,7 +50,7 @@ public class BatchController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "redirect:/batchList";
+        return "redirect:/fruit/batchList";
     }
 
     @RequestMapping("/batchList")
@@ -94,5 +94,14 @@ public class BatchController {
         Optional<Batch> batch = batchService.findById(batchId);
         model.addAttribute("batch", batch.get());
         return "batchInfo";
+    }
+
+    @RequestMapping(value = "/remove")
+    public String remove(@RequestParam("id") int id, Model model) {
+        batchService.removeOne(id);
+        List<Batch> batchList = batchService.findAll();
+        model.addAttribute("batchList", batchList);
+
+        return "redirect:/fruit/batchList";
     }
 }

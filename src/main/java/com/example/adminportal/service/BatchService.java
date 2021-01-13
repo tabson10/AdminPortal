@@ -12,4 +12,6 @@ public interface BatchService {
     List<Batch> findAll();
 
     Optional<Batch> findById(int batchId);
+
+    void removeOne(int id);
 }

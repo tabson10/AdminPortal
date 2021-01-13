@@ -41,6 +41,5 @@ public class AdminportalApplication implements CommandLineRunner {
         userService.createUser(user1, userRoles);
 
          */
-
     }
 }
